@@ -1,4 +1,4 @@
-package com.example.helloworld;
+package com.example.carlfreyercom;
 
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.SpringApplication;
