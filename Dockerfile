@@ -27,7 +27,7 @@ RUN mvn package -DskipTests
 
 # Use Eclipse Temurin for base image.
 # https://docs.docker.com/develop/develop-images/multistage-build/#use-multi-stage-builds
-FROM eclipse-temurin:21.0.12_7-jre-alpine
+FROM eclipse-temurin:21-alpine
 
 # Copy the jar to the production image from the builder stage.
 COPY --from=builder /app/target/carlfreyer-com-*.jar /carlfreyer-com.jar
