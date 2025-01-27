@@ -15,7 +15,7 @@
 # [START cloudrun_helloworld_dockerfile]
 # Use the official maven image to create a build artifact.
 # https://hub.docker.com/_/maven
-FROM maven:3-eclipse-temurin-17-alpine as builder
+FROM maven:3-eclipse-temurin-21-alpine as builder
 
 # Copy local code to the container image.
 WORKDIR /app
@@ -30,9 +30,9 @@ RUN mvn package -DskipTests
 FROM eclipse-temurin:17.0.12_7-jre-alpine
 
 # Copy the jar to the production image from the builder stage.
-COPY --from=builder /app/target/helloworld-*.jar /helloworld.jar
+COPY --from=builder /app/target/carlfreyer-com-*.jar /carlfreyer-com.jar
 
 # Run the web service on container startup.
-CMD ["java", "-Djava.security.egd=file:/dev/./urandom", "-jar", "/helloworld.jar"]
+CMD ["java", "-Djava.security.egd=file:/dev/./urandom", "-jar", "/carlfreyer-com.jar"]
 
 # [END cloudrun_helloworld_dockerfile]
