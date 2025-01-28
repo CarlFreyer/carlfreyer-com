@@ -14,7 +14,7 @@ public class CarlFreyerCom {
   @Value("${NAME:World}")
   String name;
   
-  @CrossOrigin(origins = "https://www.carlfreyer.com")
+  @CrossOrigin(origins = "https://carlfreyer-com-front-559135907071.us-east1.run.app")
   @RestController
   class CarlFreyerComController {
     @GetMapping("/")
