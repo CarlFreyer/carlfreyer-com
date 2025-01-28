@@ -3,10 +3,7 @@ package com.example.carlfreyercom;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PutMapping;
-import org.springframework.web.bind.annotation.RestController;
-import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.*;
 
 @SpringBootApplication
 public class CarlFreyerCom {
@@ -21,7 +18,7 @@ public class CarlFreyerCom {
     String hello() {
       return "Hello " + name + "!";
     }
-    @PutMapping("/")
+    @PostMapping("/")
     String helloPutTest() {
       return "Hello " + name + "!";
     }
