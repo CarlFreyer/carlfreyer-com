@@ -33,6 +33,6 @@ FROM eclipse-temurin:21-alpine
 COPY --from=builder /app/target/carlfreyer-com-*.jar /carlfreyer-com.jar
 
 # Run the web service on container startup.
-CMD ["java", "-Djava.security.egd=file:/dev/./urandom", "-jar", "/carlfreyer-com.jar"]
+CMD ["java", "-Djava.security.egd=file:/dev/./urandom", "-jar", "/carlfreyer-com.jar", "--spring.profiles.active=prod"]
 
 # [END cloudrun_helloworld_dockerfile]
